@@ -3,11 +3,13 @@ import cors from 'cors'
 import { Sequelize } from 'sequelize';
 import conectarDb from './configDb/db.js';
 import citasRoutes from './routes/RoutersCitas.js';
+import pacientesRouters from './routes/RoutersPacientes.js';
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use('/citas', citasRoutes )
+app.use('/pacientes',pacientesRouters)
 
 try {
     await conectarDb.authenticate();

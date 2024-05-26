@@ -1,23 +1,19 @@
 import conectarDb from "../configDb/db.js";
 import { DataTypes } from "sequelize";
 
-const citas = conectarDb.define('citas', {
-    nombre_medico: {
+const pacientes = conectarDb.define('pacientes', {
+    nombre: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    especialidad: {
+    apellido: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    fecha: {
+    identificacion: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    duracion: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+    }
 })
 
-export default citas;
+export default pacientes;
